@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Taipei Tour</string>
+
+    <!--Error-->
+    <string name="failed_to_load_more_data">Failed to load more data</string>
+    <string name="retry">Retry</string>
+    <string name="error_code">ERROR: %1$s</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_connect_server">Failed to connect to server</string>
+    <string name="error_general">There was an issue. Please try again or contact for support.</string>
+    <string name="error_no_data">No Data</string>
+
+    <!--Support Display Data Language-->
+    <string name="english">English</string>
+    <string name="taiwan">Taipei</string>
+    <string name="chinese">Chinese</string>
+    <string name="thai">Thai</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="indonesian">Indonesian</string>
+    <string name="spanish">Spanish</string>
+    <string name="japanese">Japanese</string>
+    <string name="korean">Korean</string>
 </resources>
