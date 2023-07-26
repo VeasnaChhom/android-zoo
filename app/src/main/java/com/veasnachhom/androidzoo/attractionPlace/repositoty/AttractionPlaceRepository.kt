@@ -31,8 +31,14 @@ class AttractionPlaceRepository @Inject constructor(
                 val parsedResultFromSuccess = ResponseResultParser.parseResultFromSuccess(
                     context, apiService.getAttractionPlace(languageCode, page)
                 )
-                parsedResultFromSuccess.onSuccess {
-                    emit(CallAPIResult.createOnSuccess(it?.data))
+                if (parsedResultFromSuccess.isSuccess()) {
+                    parsedResultFromSuccess.onSuccess {
+                        emit(CallAPIResult.createOnSuccess(it?.data))
+                    }
+                } else {
+                    parsedResultFromSuccess.onFailure { error ->
+                        emit(CallAPIResult.createOnFailure(error))
+                    }
                 }
             } catch (ex: Exception) {
                 emit(ResponseResultParser.parseResultFromException(context, ex))

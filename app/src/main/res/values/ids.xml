@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="menu_en" type="id" />
+    <item name="menu_zh_tw" type="id" />
+    <item name="menu_zh_cn" type="id" />
+    <item name="menu_ja" type="id" />
+    <item name="menu_ko" type="id" />
+    <item name="menu_es" type="id" />
+    <item name="menu_id" type="id" />
+    <item name="menu_th" type="id" />
+    <item name="menu_vi" type="id" />
+</resources>

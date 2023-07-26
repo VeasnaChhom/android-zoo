@@ -3,6 +3,7 @@ package com.veasnachhom.androidzoo.attractionPlace.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.veasnachhom.androidzoo.R
 import com.veasnachhom.androidzoo.adapter.BaseLoadMoreAdapter
 import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
 import com.veasnachhom.androidzoo.databinding.ListItemAttractionPlaceBinding
@@ -40,6 +41,8 @@ class AttractionPlaceAdapter(data: ArrayList<AttractionPlace> = arrayListOf()) :
                 place.images[0].let {
                     binding.imageLogo.loadImageView(it.url)
                 }
+            } else {
+                binding.imageLogo.setImageResource(R.drawable.ic_photo)
             }
             binding.textviewName.text = place.name
             binding.textviewIntroduction.text = place.introduction

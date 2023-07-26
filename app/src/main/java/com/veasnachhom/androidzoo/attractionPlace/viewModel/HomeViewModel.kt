@@ -21,9 +21,15 @@ class HomeViewModel @Inject constructor(
     val data = _data
     private var _isSwiping = MutableLiveData<Boolean>()
     val isSwiping = _isSwiping
+    private var languageType: DisplayLanguageType = DisplayLanguageType.ENGLISH
 
     override fun onRetryClicked() {
         loadData()
+    }
+
+    fun loadDataOnLanguageChanged(languageType: DisplayLanguageType) {
+        this.languageType = languageType
+        loadData(isSwipeToRefresh = false, isLoadMore = false)
     }
 
     fun loadData(
@@ -35,7 +41,7 @@ class HomeViewModel @Inject constructor(
         }
         viewModelScope.launch {
             shoeRepository.getAttractionPlaceList(
-                languageCode = DisplayLanguageType.ENGLISH.code, isLoadMore = isLoadMore == true
+                languageCode = languageType.code, isLoadMore = isLoadMore == true
             ).collect() {
                 it.onSuccess { it2 ->
                     _isSwiping.postValue(false)

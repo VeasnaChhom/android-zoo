@@ -86,6 +86,9 @@ dependencies {
 
     //For easy logging
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    //For paging indicator
+    implementation 'com.github.zhpanvip:viewpagerindicator:1.2.3'
 }
 
 // Allow references to generated code

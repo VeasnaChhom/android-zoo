@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/menu_en"
+        android:title="@string/english" />
+
+    <item
+        android:id="@+id/menu_zh_tw"
+        android:title="@string/taiwan" />
+
+    <item
+        android:id="@+id/menu_zh_cn"
+        android:title="@string/chinese" />
+
+    <item
+        android:id="@+id/menu_ja"
+        android:title="@string/japanese" />
+
+    <item
+        android:id="@+id/menu_ko"
+        android:title="@string/korean" />
+
+    <item
+        android:id="@+id/menu_es"
+        android:title="@string/spanish" />
+
+    <item
+        android:id="@+id/menu_id"
+        android:title="@string/indonesian" />
+
+    <item
+        android:id="@+id/menu_th"
+        android:title="@string/thai" />
+
+    <item
+        android:id="@+id/menu_vi"
+        android:title="@string/vietnamese" />
+</menu>

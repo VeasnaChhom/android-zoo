@@ -1,10 +1,16 @@
 package com.veasnachhom.androidzoo.utility
 
+import android.graphics.Color
+import android.graphics.Paint
+import android.text.SpannableStringBuilder
 import android.text.TextUtils
+import android.text.method.LinkMovementMethod
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.TextView.OnEditorActionListener
+import androidx.annotation.StringRes
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -12,6 +18,7 @@ import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.android.material.textfield.TextInputEditText
 import com.veasnachhom.androidzoo.ui.widget.DelayClickListener
 import com.veasnachhom.androidzoo.utility.ExtensionUtil.loadImageView
+
 
 object BindingUtil {
 
@@ -70,5 +77,21 @@ object BindingUtil {
         view.background.apply {
             DrawableCompat.setTint(this, color)
         }
+    }
+
+    @JvmStatic
+    @BindingAdapter(value = ["stringResourceId", "argument"], requireAll = true)
+    fun setCustomResourceString(
+        textView: TextView, @StringRes stringResourceId: Int, argument: String
+    ) {
+        textView.text = textView.context.getString(stringResourceId, argument)
+    }
+
+    @JvmStatic
+    @BindingAdapter("setTextUrl")
+    fun setTextUrl(textView: TextView, url: String) {
+        textView.setTextColor(Color.BLUE)
+        textView.text = url
+        textView.paintFlags = textView.paintFlags or Paint.UNDERLINE_TEXT_FLAG
     }
 }
