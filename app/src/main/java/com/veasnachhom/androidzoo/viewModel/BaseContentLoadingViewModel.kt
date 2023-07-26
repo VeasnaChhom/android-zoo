@@ -1,4 +1,4 @@
-package com.veasnachhom.androidzoo.viewmodel
+package com.veasnachhom.androidzoo.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

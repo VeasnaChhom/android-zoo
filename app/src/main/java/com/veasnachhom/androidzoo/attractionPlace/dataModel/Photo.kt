@@ -1,4 +1,4 @@
-package com.veasnachhom.androidzoo.dataModel
+package com.veasnachhom.androidzoo.attractionPlace.dataModel
 
 import com.google.gson.annotations.SerializedName
 

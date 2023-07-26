@@ -1,9 +1,10 @@
-package com.veasnachhom.androidzoo.adapter
+package com.veasnachhom.androidzoo.attractionPlace.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.veasnachhom.androidzoo.dataModel.AttractionPlace
+import com.veasnachhom.androidzoo.adapter.BaseLoadMoreAdapter
+import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
 import com.veasnachhom.androidzoo.databinding.ListItemAttractionPlaceBinding
 import com.veasnachhom.androidzoo.utility.ExtensionUtil.loadImageView
 

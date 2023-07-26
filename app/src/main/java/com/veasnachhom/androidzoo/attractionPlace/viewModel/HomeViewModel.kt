@@ -1,12 +1,13 @@
-package com.veasnachhom.androidzoo.viewmodel
+package com.veasnachhom.androidzoo.attractionPlace.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.veasnachhom.androidzoo.dataModel.AttractionPlace
-import com.veasnachhom.androidzoo.dataModel.DisplayLanguageType
+import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
+import com.veasnachhom.androidzoo.attractionPlace.dataModel.DisplayLanguageType
 import com.veasnachhom.androidzoo.dataModel.ErrorResponse
-import com.veasnachhom.androidzoo.repositoty.AttractionPlaceRepository
+import com.veasnachhom.androidzoo.attractionPlace.repositoty.AttractionPlaceRepository
+import com.veasnachhom.androidzoo.viewModel.BaseContentLoadingViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

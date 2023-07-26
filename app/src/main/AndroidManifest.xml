@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.HomeActivity"
+            android:name=".attractionPlace.ui.activity.HomeActivity"
             android:exported="false" />
     </application>
 

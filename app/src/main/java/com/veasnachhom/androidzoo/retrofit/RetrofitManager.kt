@@ -1,7 +1,7 @@
 package com.veasnachhom.androidzoo.retrofit
 
 import com.veasnachhom.androidzoo.BuildConfig
-import com.veasnachhom.androidzoo.api.AttractionPlaceAPI
+import com.veasnachhom.androidzoo.attractionPlace.api.AttractionPlaceAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,11 +1,11 @@
-package com.veasnachhom.androidzoo.repositoty
+package com.veasnachhom.androidzoo.attractionPlace.repositoty
 
 import android.content.Context
 import com.veasnachhom.androidzoo.R
-import com.veasnachhom.androidzoo.api.AttractionPlaceAPI
-import com.veasnachhom.androidzoo.dataModel.AttractionPlace
+import com.veasnachhom.androidzoo.attractionPlace.api.AttractionPlaceAPI
+import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
 import com.veasnachhom.androidzoo.dataModel.CallAPIResult
-import com.veasnachhom.androidzoo.dataModel.DisplayLanguageType
+import com.veasnachhom.androidzoo.attractionPlace.dataModel.DisplayLanguageType
 import com.veasnachhom.androidzoo.retrofit.ResponseResultParser
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow

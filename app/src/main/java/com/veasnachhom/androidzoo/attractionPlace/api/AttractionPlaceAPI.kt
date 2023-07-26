@@ -1,6 +1,6 @@
-package com.veasnachhom.androidzoo.api
+package com.veasnachhom.androidzoo.attractionPlace.api
 
-import com.veasnachhom.androidzoo.dataModel.AttractionPlace
+import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
 import com.veasnachhom.androidzoo.dataModel.BaseAPIResponse
 import retrofit2.Response
 import retrofit2.http.GET

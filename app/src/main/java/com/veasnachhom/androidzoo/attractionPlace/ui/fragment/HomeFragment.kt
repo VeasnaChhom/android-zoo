@@ -1,4 +1,4 @@
-package com.veasnachhom.androidzoo.ui.fragment
+package com.veasnachhom.androidzoo.attractionPlace.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,10 @@ import com.google.gson.Gson
 import com.veasnachhom.androidzoo.R
 import com.veasnachhom.androidzoo.databinding.FragmentHomeBinding
 import com.veasnachhom.androidzoo.ui.decorator.DefaultItemDecoration
+import com.veasnachhom.androidzoo.ui.fragment.BaseFragment
 import com.veasnachhom.androidzoo.ui.layoutmanager.LinearLoadMoreLayoutManager
-import com.veasnachhom.androidzoo.viewmodel.HomeViewModel
-import com.veasnachhom.androidzoo.viewmodel.LoadingContentViewModel
+import com.veasnachhom.androidzoo.attractionPlace.viewModel.HomeViewModel
+import com.veasnachhom.androidzoo.viewModel.LoadingContentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 

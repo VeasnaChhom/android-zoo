@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.veasnachhom.androidzoo.R
+import com.veasnachhom.androidzoo.attractionPlace.ui.activity.HomeActivity
 
 class StarterActivity : AppCompatActivity() {
 

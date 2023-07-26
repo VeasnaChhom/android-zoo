@@ -1,6 +1,7 @@
-package com.veasnachhom.androidzoo.dataModel
+package com.veasnachhom.androidzoo.attractionPlace.dataModel
 
 import com.google.gson.annotations.SerializedName
+import com.veasnachhom.androidzoo.dataModel.BaseDiffModel
 
 data class AttractionPlace(
     @SerializedName("id") val id: String,

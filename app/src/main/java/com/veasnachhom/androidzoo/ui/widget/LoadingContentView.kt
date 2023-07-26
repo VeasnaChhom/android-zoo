@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.veasnachhom.androidzoo.databinding.LayoutLoadingContentBinding
-import com.veasnachhom.androidzoo.viewmodel.LoadingContentViewModel
+import com.veasnachhom.androidzoo.viewModel.LoadingContentViewModel
 
 class LoadingContentView(context: Context?, attrs: AttributeSet?) : RelativeLayout(context, attrs) {
 
