@@ -19,6 +19,11 @@
                 android:background="?android:attr/windowBackground"
                 tools:title="Angkor Wat" />
 
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <WebView
                 android:id="@+id/webview"
                 android:layout_width="match_parent"

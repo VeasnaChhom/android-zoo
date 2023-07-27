@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.google.android.material.appbar.MaterialToolbar
@@ -33,6 +34,21 @@ class WebViewFragment : BaseFragment<FragmentWebviewBinding>() {
                     override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                         view.loadUrl(url)
                         return false
+                    }
+
+                    override fun onPageFinished(view: WebView?, url: String?) {
+                        super.onPageFinished(view, url)
+                        binding.progressBar.postDelayed({
+                            binding.progressBar.apply {
+                                visibility = View.GONE
+                            }
+                        }, 1000)
+                    }
+                })
+                webChromeClient = (object : WebChromeClient() {
+                    override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                        super.onProgressChanged(view, newProgress)
+                        binding.progressBar.setProgress(newProgress, true)
                     }
                 })
                 loadUrl(url)
