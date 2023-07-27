@@ -27,3 +27,5 @@
 11. Implement Day and Night themes
 12. Use some other dependencies
 
+#### Please find the demo build and screenshots in demo directory of the project
+
