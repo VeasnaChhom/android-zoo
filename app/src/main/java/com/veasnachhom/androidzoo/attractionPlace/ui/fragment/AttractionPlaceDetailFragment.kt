@@ -17,6 +17,7 @@ import com.veasnachhom.androidzoo.attractionPlace.ui.activity.WebViewActivity
 import com.veasnachhom.androidzoo.attractionPlace.viewModel.AttractionPlaceDetailViewModel
 import com.veasnachhom.androidzoo.databinding.FragmentAttractionPlaceDetailBinding
 import com.veasnachhom.androidzoo.ui.fragment.BaseFragment
+import com.veasnachhom.androidzoo.ui.widget.DelayClickListener
 import com.zhpan.indicator.enums.IndicatorSlideMode
 import com.zhpan.indicator.enums.IndicatorStyle
 
@@ -47,9 +48,9 @@ class AttractionPlaceDetailFragment : BaseFragment<FragmentAttractionPlaceDetail
         binding.lifecycleOwner = viewLifecycleOwner
         setToolbarTitle(attractionPlace?.name)
         bindPhotoSlider()
-        binding.textviewOfficialUrl.setOnClickListener {
+        binding.textviewOfficialUrl.setOnClickListener(DelayClickListener().onDelayClick {
             startActivity(WebViewActivity.newInstance(requireContext(), attractionPlace?.url))
-        }
+        })
     }
 
     private fun bindPhotoSlider() {
@@ -59,11 +60,9 @@ class AttractionPlaceDetailFragment : BaseFragment<FragmentAttractionPlaceDetail
                 binding.indicatorView.apply {
                     setSliderColor(
                         MaterialColors.getColor(
-                            binding.root,
-                            com.google.android.material.R.attr.colorButtonNormal
+                            binding.root, com.google.android.material.R.attr.colorButtonNormal
                         ), MaterialColors.getColor(
-                            binding.root,
-                            com.google.android.material.R.attr.colorControlActivated
+                            binding.root, com.google.android.material.R.attr.colorControlActivated
                         )
                     )
                     setSliderWidth(resources.getDimension(R.dimen.dimen_10dp))
