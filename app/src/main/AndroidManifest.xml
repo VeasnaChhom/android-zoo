@@ -34,7 +34,7 @@
             android:name=".ui.activity.StarterActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.DayNight"
+            android:theme="@style/SplashTheme"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

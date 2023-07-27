@@ -89,6 +89,9 @@ dependencies {
 
     //For paging indicator
     implementation 'com.github.zhpanvip:viewpagerindicator:1.2.3'
+
+    //Splash screen
+    implementation "androidx.core:core-splashscreen:1.0.1"
 }
 
 // Allow references to generated code
