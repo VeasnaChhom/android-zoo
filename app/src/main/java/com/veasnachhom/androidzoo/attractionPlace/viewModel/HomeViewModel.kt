@@ -5,10 +5,11 @@ import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
 import com.veasnachhom.androidzoo.attractionPlace.dataModel.DisplayLanguageType
-import com.veasnachhom.androidzoo.dataModel.ErrorResponse
 import com.veasnachhom.androidzoo.attractionPlace.repositoty.AttractionPlaceRepository
+import com.veasnachhom.androidzoo.dataModel.LoadDataCallback
 import com.veasnachhom.androidzoo.viewModel.BaseContentLoadingViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,11 +18,12 @@ class HomeViewModel @Inject constructor(
     private val shoeRepository: AttractionPlaceRepository
 ) : BaseContentLoadingViewModel() {
 
-    private var _data = MutableLiveData<LoadDataCallback>()
-    val data = _data
-    private var _isSwiping = MutableLiveData<Boolean>()
-    val isSwiping = _isSwiping
+    var data = MutableLiveData<LoadDataCallback<AttractionPlace>>()
+        private set
+    var isSwiping = MutableLiveData<Boolean>()
+        private set
     private var languageType: DisplayLanguageType = DisplayLanguageType.ENGLISH
+    private var currentJob: Job? = null
 
     override fun onRetryClicked() {
         loadData()
@@ -29,29 +31,35 @@ class HomeViewModel @Inject constructor(
 
     fun loadDataOnLanguageChanged(languageType: DisplayLanguageType) {
         this.languageType = languageType
+        //Cancel previous loading data job
+        currentJob?.cancel()
         loadData(isSwipeToRefresh = false, isLoadMore = false)
     }
 
     fun loadData(
-        isSwipeToRefresh: Boolean? = false, isLoadMore: Boolean? = false
+        isAppliedLanguageSelection: Boolean? = false,
+        isSwipeToRefresh: Boolean? = false,
+        isLoadMore: Boolean? = false
     ) {
-        val previousDataEmpty = ((isLoadMore == false && isSwipeToRefresh == false))
-        if (previousDataEmpty) {
+        val isReloadData =
+            (isAppliedLanguageSelection == true || (isLoadMore == false && isSwipeToRefresh == false))
+        if (isReloadData) {
             showLoadingContentSkeleton()
         }
-        viewModelScope.launch {
+
+        currentJob = viewModelScope.launch {
             shoeRepository.getAttractionPlaceList(
                 languageCode = languageType.code, isLoadMore = isLoadMore == true
-            ).collect() {
+            ).collect {
                 it.onSuccess { it2 ->
-                    _isSwiping.postValue(false)
-                    if (previousDataEmpty && it2?.isEmpty() == true) {
+                    isSwiping.postValue(false)
+                    if (isReloadData && it2?.isEmpty() == true) {
                         //Empty data response
                         showError(shoeRepository.getNoDataErrorMessage())
                     } else {
                         val hasMoreData =
                             it2?.size!! >= AttractionPlaceRepository.DEFAULT_LIMIT_PER_PAGE
-                        _data.postValue(
+                        data.postValue(
                             LoadDataCallback(
                                 data = it2,
                                 isLoadMore = isLoadMore,
@@ -67,8 +75,8 @@ class HomeViewModel @Inject constructor(
                             showError(it2.message)
                         }
                     }
-                    _isSwiping.postValue(false)
-                    _data.postValue(
+                    isSwiping.postValue(false)
+                    data.postValue(
                         LoadDataCallback(
                             error = it2,
                             isLoadMore = isLoadMore,
@@ -84,19 +92,11 @@ class HomeViewModel @Inject constructor(
         return SwipeRefreshLayout.OnRefreshListener {
             //Ignore swipe to refresh action
             if (isDisplayingAnyLoadingContent()) {
-                _isSwiping.postValue(false)
+                isSwiping.postValue(false)
             } else {
-                _isSwiping.postValue(true)
+                isSwiping.postValue(true)
                 loadData(isSwipeToRefresh = true)
             }
         }
     }
-
-    data class LoadDataCallback(
-        val data: List<AttractionPlace>? = arrayListOf(),
-        val error: ErrorResponse? = null,
-        val isSwipeToRefresh: Boolean? = false,
-        val isLoadMore: Boolean? = false,
-        val hasMoreData: Boolean? = false
-    )
 }

@@ -1,7 +1,7 @@
 package com.veasnachhom.androidzoo.application
 
 import android.app.Application
-import com.facebook.shimmer.BuildConfig
+import com.veasnachhom.androidzoo.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 

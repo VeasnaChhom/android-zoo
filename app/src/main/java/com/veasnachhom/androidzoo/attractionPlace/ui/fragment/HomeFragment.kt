@@ -16,6 +16,7 @@ import com.veasnachhom.androidzoo.attractionPlace.dataModel.AttractionPlace
 import com.veasnachhom.androidzoo.attractionPlace.dataModel.DisplayLanguageType
 import com.veasnachhom.androidzoo.attractionPlace.ui.activity.AttractionPlaceDetailActivity
 import com.veasnachhom.androidzoo.attractionPlace.viewModel.HomeViewModel
+import com.veasnachhom.androidzoo.dataModel.LoadDataCallback
 import com.veasnachhom.androidzoo.databinding.FragmentHomeBinding
 import com.veasnachhom.androidzoo.ui.decorator.DefaultItemDecoration
 import com.veasnachhom.androidzoo.ui.fragment.BaseFragment
@@ -97,7 +98,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         popup.show()
     }
 
-    private fun bindData(data: HomeViewModel.LoadDataCallback) {
+    private fun bindData(data: LoadDataCallback<AttractionPlace>) {
         if (data.error == null) {
             if (adapter == null) {
                 adapter = AttractionPlaceAdapter(data.data as ArrayList<AttractionPlace>)

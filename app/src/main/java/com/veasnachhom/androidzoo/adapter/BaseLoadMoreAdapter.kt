@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.veasnachhom.androidzoo.dataModel.BaseDiffModel
 import com.veasnachhom.androidzoo.databinding.ListLoadingItemBinding
+import com.veasnachhom.androidzoo.utility.AppUtils
+import timber.log.Timber
 
 abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayList<D> = arrayListOf()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -93,6 +95,7 @@ abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayL
 
     fun onLoadMoreDataError() {
         isShowLoadMoreFailedState = true
+        notifyItemChanged(itemCount - 1)
     }
 
     class LoadMoreViewHolder(private val binding: ListLoadingItemBinding) :

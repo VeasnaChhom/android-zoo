@@ -8,5 +8,6 @@
     <style name="AppTheme.SupportLightStatusBar">
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">?android:colorBackground</item>
+        <item name="android:navigationBarColor">?android:colorBackground</item>
     </style>
 </resources>
