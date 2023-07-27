@@ -15,7 +15,7 @@
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
-                style="@style/ToolbarStyle"
+                style="@style/Toolbar"
                 android:background="?android:attr/windowBackground"
                 tools:title="Angkor Wat" />
 

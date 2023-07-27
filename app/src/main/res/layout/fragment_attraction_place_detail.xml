@@ -21,7 +21,7 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            style="@style/ToolbarStyle"
+            style="@style/Toolbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -74,26 +74,20 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textview_name"
-                    style="@style/TextAppearance.Material3.TitleMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Title"
                     android:text="@{viewModel.name}"
                     tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textview_introduction"
-                    style="@style/TextAppearance.Material3.BodyMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/BodyText"
                     android:layout_marginTop="@dimen/dimen_16dp"
                     android:text="@{viewModel.introduction}"
                     tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textview_address"
-                    style="@style/TextAppearance.Material3.BodyMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/BodyText"
                     android:layout_marginTop="@dimen/dimen_16dp"
                     app:argument="@{viewModel.address}"
                     app:stringResourceId="@{R.string.display_address_template}"
@@ -101,9 +95,7 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textview_last_update_time"
-                    style="@style/TextAppearance.Material3.BodyMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/BodyText"
                     android:layout_marginTop="@dimen/dimen_16dp"
                     app:argument="@{viewModel.lastUpdateTime}"
                     app:stringResourceId="@{R.string.display_last_modified_date_template}"
@@ -111,11 +103,10 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textview_official_url"
-                    style="@style/TextAppearance.Material3.BodyMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/BodyText"
                     android:layout_marginTop="@dimen/dimen_16dp"
                     android:background="?selectableItemBackground"
+                    android:textColor="@color/color_link"
                     app:setTextUrl="@{viewModel.siteUrl}"
                     tools:text="wwww.google.com.kh" />
 

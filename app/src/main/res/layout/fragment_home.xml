@@ -24,7 +24,7 @@
             app:title="@string/app_name" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipeRefreshLayout"
+            android:id="@+id/swipe_refresh"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:isRefreshing="@{viewModel.isSwiping()}"
@@ -43,7 +43,7 @@
                     android:layout_height="match_parent">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView"
+                        android:id="@+id/recyclerview"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:visibility="visible"
@@ -51,7 +51,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.veasnachhom.androidzoo.ui.widget.LoadingContentView
-                        android:id="@+id/loadingContentSkeleton"
+                        android:id="@+id/loading_content_skeleton"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 

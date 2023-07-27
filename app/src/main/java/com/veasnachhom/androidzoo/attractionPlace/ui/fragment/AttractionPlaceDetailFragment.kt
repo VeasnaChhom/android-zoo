@@ -77,7 +77,6 @@ class AttractionPlaceDetailFragment : BaseFragment<FragmentAttractionPlaceDetail
     }
 
     companion object {
-
         fun newInstance(attractionPlace: AttractionPlace?): AttractionPlaceDetailFragment {
             val fragment = AttractionPlaceDetailFragment()
             fragment.attractionPlace = attractionPlace

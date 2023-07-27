@@ -1,12 +1,13 @@
 package com.veasnachhom.androidzoo.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.veasnachhom.androidzoo.dataModel.BaseDiffModel
-import com.veasnachhom.androidzoo.databinding.ListLoadingItemBinding
+import com.veasnachhom.androidzoo.databinding.ListItemLoadingBinding
 
 abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayList<D> = arrayListOf()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -20,7 +21,7 @@ abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayL
     ): RecyclerView.ViewHolder {
         return if (viewType == TYPE_LOAD_MORE_ITEM) {
             val itemBinding =
-                ListLoadingItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                ListItemLoadingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             LoadMoreViewHolder(itemBinding)
         } else {
             onCreateChildViewHolder(parent, viewType)
@@ -41,6 +42,7 @@ abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayL
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     open fun resetData(data2: List<D>, hasLoadMore: Boolean? = false) {
         canLoadMore = hasLoadMore == true
         data.clear()
@@ -96,7 +98,7 @@ abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayL
         notifyItemChanged(itemCount - 1)
     }
 
-    class LoadMoreViewHolder(private val binding: ListLoadingItemBinding) :
+    class LoadMoreViewHolder(private val binding: ListItemLoadingBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(isShowError: Boolean? = false, onRetryClicked: () -> Unit) {

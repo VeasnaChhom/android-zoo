@@ -66,7 +66,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         viewModel.onStartShowLoadingSkeletonCallback {
             binding.loadingContentSkeleton.visibility = View.VISIBLE
             binding.loadingContentSkeleton.alpha = 1f
-            binding.recyclerView.visibility = View.GONE
+            binding.recyclerview.visibility = View.GONE
         }
         viewModel.loadData()
 
@@ -111,9 +111,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     viewModel.loadData(isLoadMore = true)
                 }
                 layoutManager?.setShouldDetectLoadMore(data.hasMoreData)
-                binding.recyclerView.layoutManager = layoutManager
-                if (binding.recyclerView.itemDecorationCount == 0) {
-                    binding.recyclerView.addItemDecoration(
+                binding.recyclerview.layoutManager = layoutManager
+                if (binding.recyclerview.itemDecorationCount == 0) {
+                    binding.recyclerview.addItemDecoration(
                         DefaultItemDecoration(
                             resources.getDimensionPixelSize(
                                 R.dimen.dimen_16dp
@@ -123,7 +123,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                         )
                     )
                 }
-                binding.recyclerView.adapter = adapter
+                binding.recyclerview.adapter = adapter
                 adapter?.onRetryLoadMore {
                     viewModel.loadData(isLoadMore = true)
                 }
@@ -158,8 +158,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun hideLoadingContentSkeleton() {
         binding.loadingContentSkeleton.hideView {
-            binding.recyclerView.visibility = View.VISIBLE
-            binding.recyclerView.animate().alpha(1f).setDuration(100).start()
+            binding.recyclerview.visibility = View.VISIBLE
+            binding.recyclerview.animate().alpha(1f).setDuration(100).start()
         }
     }
 

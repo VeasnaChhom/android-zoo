@@ -11,7 +11,6 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.veasnachhom.androidzoo.databinding.FragmentWebviewBinding
 import com.veasnachhom.androidzoo.ui.fragment.BaseFragment
 
-
 class WebViewFragment : BaseFragment<FragmentWebviewBinding>() {
 
     private var url: String? = null

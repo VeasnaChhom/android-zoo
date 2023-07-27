@@ -90,7 +90,6 @@ object BindingUtil {
     @JvmStatic
     @BindingAdapter("setTextUrl")
     fun setTextUrl(textView: TextView, url: String) {
-        textView.setTextColor(Color.BLUE)
         textView.text = url
         textView.paintFlags = textView.paintFlags or Paint.UNDERLINE_TEXT_FLAG
     }

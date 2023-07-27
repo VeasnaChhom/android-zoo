@@ -47,10 +47,7 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/errorTextView"
-                style="@style/TextAppearance.Material3.BodyLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
+                style="@style/ErrorText"
                 android:text="@{viewModel.errorMessage}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -60,9 +57,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/retryButton"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/RetryButton"
                 android:layout_marginTop="@dimen/dimen_24"
                 android:text="@string/retry"
                 app:setDelayClickListener="@{() -> viewModel.onRetryClicked()}" />

@@ -18,13 +18,9 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_logo"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:background="@color/content_skeleton_color"
-                android:scaleType="centerCrop"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                style="@style/ImageLogoItem"
+                android:background="?colorButtonNormal"
+                tools:ignore="MissingConstraints" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -40,24 +36,16 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textview_name"
-                style="@style/TextAppearance.Material3.TitleMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/content_skeleton_color"
-                android:ellipsize="end"
-                android:maxLines="2"
+                style="@style/Title.ListItem"
+                android:background="?colorButtonNormal"
                 android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                 android:textColor="@android:color/transparent"
                 tools:ignore="HardcodedText" />
 
             <com.google.android.material.textview.MaterialTextView
-                style="@style/TextAppearance.Material3.BodyMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/BodyText.ListItem"
                 android:layout_marginTop="@dimen/dimen_8dp"
-                android:background="@color/content_skeleton_color"
-                android:ellipsize="end"
-                android:maxLines="3"
+                android:background="?colorButtonNormal"
                 android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                 android:textColor="@android:color/transparent"
                 tools:ignore="HardcodedText" />

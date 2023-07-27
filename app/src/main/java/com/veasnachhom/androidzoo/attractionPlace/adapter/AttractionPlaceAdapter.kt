@@ -20,11 +20,11 @@ class AttractionPlaceAdapter(data: ArrayList<AttractionPlace> = arrayListOf()) :
         val itemBinding = ListItemAttractionPlaceBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-        return ShoeViewHolder(itemBinding)
+        return ItemViewHolder(itemBinding)
     }
 
     override fun onBindChildViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is ShoeViewHolder) {
+        if (holder is ItemViewHolder) {
             holder.bindData(data[position], onItemClickCallback)
         }
     }
@@ -33,7 +33,7 @@ class AttractionPlaceAdapter(data: ArrayList<AttractionPlace> = arrayListOf()) :
         this.onItemClickCallback = callback
     }
 
-    class ShoeViewHolder(private val binding: ListItemAttractionPlaceBinding) :
+    class ItemViewHolder(private val binding: ListItemAttractionPlaceBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(place: AttractionPlace, onItemClick: ((Int, AttractionPlace) -> Unit)?) {

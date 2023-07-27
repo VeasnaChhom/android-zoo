@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val shoeRepository: AttractionPlaceRepository
+    private val repository: AttractionPlaceRepository
 ) : BaseContentLoadingViewModel() {
 
     var data = MutableLiveData<LoadDataCallback<AttractionPlace>>()
@@ -48,14 +48,14 @@ class HomeViewModel @Inject constructor(
         }
 
         currentJob = viewModelScope.launch {
-            shoeRepository.getAttractionPlaceList(
+            repository.getAttractionPlaceList(
                 languageCode = languageType.code, isLoadMore = isLoadMore == true
             ).collect {
                 it.onSuccess { it2 ->
                     isSwiping.postValue(false)
                     if (isReloadData && it2?.isEmpty() == true) {
                         //Empty data response
-                        showError(shoeRepository.getNoDataErrorMessage())
+                        showError(repository.getNoDataErrorMessage())
                     } else {
                         val hasMoreData =
                             it2?.size!! >= AttractionPlaceRepository.DEFAULT_LIMIT_PER_PAGE

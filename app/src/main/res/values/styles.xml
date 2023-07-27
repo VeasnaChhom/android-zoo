@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ToolbarStyle">
+    <style name="Toolbar">
         <item name="navigationIcon">@drawable/ic_back_navigation</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
+    <style name="Title" parent="@style/TextAppearance.Material3.TitleMedium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Title.ListItem">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="BodyText" parent="@style/TextAppearance.Material3.BodyMedium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BodyText.ListItem">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">3</item>
+    </style>
+    
+    <!--The parent layout must be ConstraintLayout-->
+    <style name="ImageLogoItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="layout_constraintDimensionRatio">1:1</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style name="ErrorText" parent="@style/TextAppearance.Material3.BodyLarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="RetryButton" parent="@style/Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>

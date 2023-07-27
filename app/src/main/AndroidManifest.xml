@@ -22,19 +22,19 @@
             android:name=".attractionPlace.ui.activity.WebViewActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.SupportLightStatusBar"
+            android:theme="@style/AppTheme.DayNight"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".attractionPlace.ui.activity.AttractionPlaceDetailActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.SupportLightStatusBar"
+            android:theme="@style/AppTheme.DayNight"
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ui.activity.StarterActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.SupportLightStatusBar"
+            android:theme="@style/AppTheme.DayNight"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +46,7 @@
             android:name=".attractionPlace.ui.activity.HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.SupportLightStatusBar"
+            android:theme="@style/AppTheme.DayNight"
             tools:ignore="LockedOrientationActivity" />
     </application>
 

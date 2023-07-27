@@ -20,7 +20,7 @@ class PhotoItemFragment : BaseFragment<FragmentPhotoItemBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         photoUrl?.let {
-            binding.image.loadImageView(it, false)
+            binding.imageview.loadImageView(it, false)
         }
     }
 
