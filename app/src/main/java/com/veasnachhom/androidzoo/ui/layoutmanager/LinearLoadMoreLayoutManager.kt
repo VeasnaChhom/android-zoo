@@ -24,9 +24,7 @@ class LinearLoadMoreLayoutManager(context: Context?) : LinearLayoutManager(conte
     }
 
     fun checkLToInvokeReachLoadMoreByDefaultIfNecessary() {
-        //Log.i(TAG, "checkLToInvokeReachLoadMoreByDefaultIfNecessary: mIsLoadingMore ==> " + mIsLoadingMore);
         if (isReachedLastItem() && !mIsLoadingMore) {
-            //Log.i(TAG, "onReachedLoadMoreByDefault");
             mIsLoadingMore = true
             onReachedLoadMoreByDefault.invoke()
         }

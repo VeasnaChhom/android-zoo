@@ -1,39 +1,35 @@
 package com.veasnachhom.androidzoo.attractionPlace.dataModel
 
-import android.content.Context
 import androidx.annotation.IdRes
-import androidx.annotation.StringRes
 import com.veasnachhom.androidzoo.R
 
 enum class DisplayLanguageType(
-    val code: String, @IdRes val menuId: Int, @StringRes private val displayNameRes: Int
+    val code: String, @IdRes val menuId: Int
 ) {
 
-    ENGLISH("en", R.id.menu_en, R.string.english), TAIPEI(
-        "zh-tw", R.id.menu_zh_tw, R.string.taiwan
+    ENGLISH("en", R.id.menu_en), TAIPEI(
+        "zh-tw", R.id.menu_zh_tw
     ),
     CHINESE(
-        "zh-cn", R.id.menu_zh_cn, R.string.chinese
+        "zh-cn", R.id.menu_zh_cn
     ),
     JAPANESE(
-        "ja", R.id.menu_ja, R.string.japanese
+        "ja", R.id.menu_ja
     ),
     KOREAN(
-        "ko", R.id.menu_ko, R.string.korean
+        "ko", R.id.menu_ko
     ),
     SPANISH(
-        "es", R.id.menu_es, R.string.spanish
+        "es", R.id.menu_es
     ),
     INDONESIAN(
-        "id", R.id.menu_id, R.string.indonesian
+        "id", R.id.menu_id
     ),
-    THAI("th", R.id.menu_th, R.string.thai),
+    THAI("th", R.id.menu_th),
 
     VIETNAMESE(
-        "vi", R.id.menu_vi, R.string.vietnamese
+        "vi", R.id.menu_vi
     );
-
-    fun getDisplayName(context: Context): String = context.getString(displayNameRes)
 
     companion object {
 

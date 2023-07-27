@@ -2,7 +2,6 @@ package com.veasnachhom.androidzoo.retrofit
 
 import android.content.Context
 import android.text.TextUtils
-import com.google.gson.Gson
 import com.veasnachhom.androidzoo.dataModel.CallAPIResult
 import com.veasnachhom.androidzoo.dataModel.ErrorResponse
 import com.veasnachhom.androidzoo.utility.AppUtils
@@ -20,7 +19,7 @@ object ResponseResultParser {
             } else {
                 var errorMessage = result.message()
                 if (TextUtils.isEmpty(errorMessage)) {
-                    errorMessage = AppUtils.toJSONString(result.body())
+                    errorMessage = AppUtils.toJSONString(result.body()) ?: ""
                 }
 
                 if (TextUtils.isEmpty(errorMessage)) {

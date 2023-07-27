@@ -23,7 +23,7 @@ abstract class BaseActivity<B : ViewDataBinding> : AppCompatActivity() {
             .replace(getRootContainerId(), fragment, fragment.javaClass.simpleName).commit()
     }
 
-    protected fun getRootContainerId(): Int {
+    protected open fun getRootContainerId(): Int {
         return R.id.root_view
     }
 

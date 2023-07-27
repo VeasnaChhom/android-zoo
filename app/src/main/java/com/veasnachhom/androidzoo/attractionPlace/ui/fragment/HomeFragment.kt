@@ -21,7 +21,6 @@ import com.veasnachhom.androidzoo.databinding.FragmentHomeBinding
 import com.veasnachhom.androidzoo.ui.decorator.DefaultItemDecoration
 import com.veasnachhom.androidzoo.ui.fragment.BaseFragment
 import com.veasnachhom.androidzoo.ui.layoutmanager.LinearLoadMoreLayoutManager
-import com.veasnachhom.androidzoo.utility.AppUtils
 import com.veasnachhom.androidzoo.viewModel.LoadingContentViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -46,7 +45,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel.data.observe(viewLifecycleOwner) {
-            AppUtils.logToJSONString(HomeFragment.javaClass, it)
             bindData(it)
         }
         binding.root.post {
@@ -68,8 +66,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             binding.loadingContentSkeleton.alpha = 1f
             binding.recyclerview.visibility = View.GONE
         }
-        viewModel.loadData()
-
         activityAttractionPlaceDetailResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {}
@@ -85,6 +81,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 else -> false
             }
         }
+        viewModel.loadData()
     }
 
     private fun showDisplayLanguagePopupMenu(v: View, @MenuRes menuRes: Int) {
