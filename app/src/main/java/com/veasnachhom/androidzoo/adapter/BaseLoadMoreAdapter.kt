@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.veasnachhom.androidzoo.dataModel.BaseDiffModel
 import com.veasnachhom.androidzoo.databinding.ListLoadingItemBinding
-import com.veasnachhom.androidzoo.utility.AppUtils
-import timber.log.Timber
 
 abstract class BaseLoadMoreAdapter<D : BaseDiffModel>(protected val data: ArrayList<D> = arrayListOf()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
